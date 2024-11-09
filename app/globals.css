@@ -22,7 +22,8 @@ body {
 }
 
 .scrollbar-hide {
-  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @layer base {

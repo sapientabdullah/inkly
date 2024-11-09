@@ -11,6 +11,7 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export default function Home() {
+
   return (
     <div className="h-full bg-[#f9f9f9]">
       <Navbar />
@@ -36,11 +37,11 @@ export default function Home() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="pl-4 outline-none bg-inherit"
+                className="pl-4 outline-none bg-inherit text-[#012a4a]"
               />
               <button
                 type="submit"
-                className="border-l border-[#012a4a] py-4 px-4 sm:px-8 active:bg-gray-900 active:text-white"
+                className="border-l border-[#012a4a] bg-[#012a4a] text-white py-4 px-4 sm:px-8 active:bg-blue-900 active:text-white"
               >
                 Subscribe
               </button>

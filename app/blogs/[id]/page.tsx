@@ -1,10 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, use } from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import { Cormorant_Garamond } from "next/font/google";
 import Link from "next/link";
 import axios from "axios";
+
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -12,9 +13,7 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 interface PageProps {
-  params: {
-    id: number;
-  };
+  params: Promise<{ id: number }>;
 }
 
 interface BlogData {
@@ -27,22 +26,26 @@ interface BlogData {
 }
 
 const Page = ({ params }: PageProps) => {
+  const { id } = use(params);
+
   const [data, setData] = useState<BlogData | null>(null);
-  const fetchData = async () => {
-    try {
-      const response = await axios.get("/api/blog/", {
-        params: { id: params.id },
-      });
-      setData(response.data.blog);
-      console.log(response.data.blog);
-    } catch (error) {
-      console.error("Failed to fetch data", error);
-    }
-  };
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/api/blog/", {
+          params: { id },
+        });
+        setData(response.data.blog);
+        console.log(response.data.blog);
+      } catch (error) {
+        console.error("Failed to fetch data", error);
+      }
+    };
+
     fetchData();
-  }, []);
+  }, [id]);
+
   return data ? (
     <>
       <div className="bg-[#e1eff6] py-5 px-5 md:px-12 lg:px-28">
@@ -144,4 +147,5 @@ const Page = ({ params }: PageProps) => {
     <></>
   );
 };
+
 export default Page;

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { connect } from "@/lib/config/db";
 import { writeFile } from "fs/promises";
 import BlogModel from "@/lib/models/BlogModel";
+import fs from "fs";
 
 export const GET = async (request: Request) => {
   const url = new URL(request.url);
@@ -53,4 +54,13 @@ export const POST = async (request: Request) => {
       { status: 500 }
     );
   }
+};
+
+export const DELETE = async (request: Request) => {
+  const url = new URL(request.url);
+  const id = url.searchParams.get("id");
+  const blog = await BlogModel.findById(id);
+  fs.unlink(`./public${blog.image}`, () => {});
+  await BlogModel.findByIdAndDelete(id);
+  return NextResponse.json({ success: true, msg: "Blog Deleted" });
 };

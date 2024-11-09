@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { connect } from "@/lib/config/db";
 import Post from "./Post";
 import axios from "axios";
 

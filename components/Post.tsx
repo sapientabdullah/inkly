@@ -13,9 +13,11 @@ interface PostProps {
 const Post = ({ title, description, category, image, id }: PostProps) => {
   return (
     <div id="posts" className="max-w-[330px] sm:max-w-[350px]">
-      <Link href={`/blogs/${id}`}>
-        <Image src={image} alt="" width={400} height={400} />
-      </Link>
+      <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
+        <Link href={`/blogs/${id}`}>
+          <Image src={image} alt="" layout="fill" objectFit="cover" />
+        </Link>
+      </div>
 
       <div className="mt-4 ">
         <Link href={`/blogs/${id}`}>

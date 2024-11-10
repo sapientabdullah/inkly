@@ -8,12 +8,21 @@ import { toast } from "react-toastify";
 
 const Page = () => {
   const [image, setImage] = useState<File | false>(false);
-  const [data, setData] = useState<any>({
+  interface BlogData {
+    title: string;
+    description: string;
+    category: string;
+    author: string;
+    authorImage: string;
+  }
+
+  const [data, setData] = useState<BlogData>({
     title: "",
     description: "",
-    category: "Startups",
-    author: "Abdullah Khan",
-    authorImage: "https://i.pravatar.cc/150?img=3",
+    category: "Climate Change",
+    author: "",
+    authorImage:
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
   });
   const onChangeHandler = (
     event: React.ChangeEvent<
@@ -43,9 +52,10 @@ const Page = () => {
       setData({
         title: "",
         description: "",
-        category: "Startups",
-        author: "Abdullah Khan",
-        authorImage: "https://i.pravatar.cc/150?img=3",
+        category: "Climate Change",
+        author: "",
+        authorImage:
+          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       });
     } else {
       toast.error("Error creating blog");
@@ -77,11 +87,11 @@ const Page = () => {
           onChange={onChangeHandler}
           value={data.category}
           name="category"
-          className="w-40 mt-4 px-4 py-3 border text-gray-500"
+          className="w-44 mt-4 px-4 py-3 border text-gray-500"
         >
-          <option value="Startups">Startups</option>
-          <option value="Technology">Technology</option>
-          <option value="Lifestyle">Lifestyle</option>
+          <option value="Climate Change">Climate Change</option>
+          <option value="Social Justice">Social Justice</option>
+          <option value="Education Access">Education Access</option>
         </select>
         <p className="text-xl text-gray-400 mt-8 ">Upload thumbnail</p>
         <label
@@ -112,8 +122,20 @@ const Page = () => {
           hidden
           required
         />
+        <input
+          name="author"
+          onChange={onChangeHandler}
+          value={data.author}
+          type="text"
+          className="bg-inherit w-full mt-4 py-3 outline-none border-none placeholder:text-2xl text-2xl"
+          required
+          placeholder="Author Name"
+        />
         <br />
-        <button type="submit" className="mt-8 w-40 h-12 bg-black text-white">
+        <button
+          type="submit"
+          className="mt-8 w-40 h-12 bg-[#012a4a] text-white"
+        >
           Publish
         </button>
       </form>

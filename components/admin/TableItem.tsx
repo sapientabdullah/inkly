@@ -20,7 +20,7 @@ const TableItem = ({
 }: TableItemProps) => {
   const entryDate = new Date(date).toDateString();
   return (
-    <tr className="bg-[#f9f9f9] border-b">
+    <tr className="bg-white border-b hover:bg-gray-100">
       <th
         scope="row"
         className="items-center gap-3 hidden sm:flex px-6 py-4 font-medium text-gray-900 whitespace-nowrap

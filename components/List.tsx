@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import { connect } from "@/lib/config/db";
 import Post from "./Post";
 import axios from "axios";
 
+interface Blog {
+  _id: string;
+  image: string;
+  title: string;
+  description: string;
+  category: string;
+}
+
 const List = () => {
   const [menu, setMenu] = useState("All");
-  interface Blog {
-    _id: string;
-    image: string;
-    title: string;
-    description: string;
-    category: string;
-  }
 
   const [blogs, setBlogs] = useState<Blog[]>([]);
 
@@ -35,34 +35,34 @@ const List = () => {
           All
         </button>
         <button
-          onClick={() => setMenu("Technology")}
+          onClick={() => setMenu("Climate Change")}
           className={
-            menu === "Technology"
+            menu === "Climate Change"
               ? "bg-[#012a4a] text-white py-1 px-4 rounded-sm"
               : ""
           }
         >
-          Technology
+          Climate Change
         </button>
         <button
-          onClick={() => setMenu("Startup")}
+          onClick={() => setMenu("Social Justice")}
           className={
-            menu === "Startup"
+            menu === "Social Justice"
               ? "bg-[#012a4a] text-white py-1 px-4 rounded-sm"
               : ""
           }
         >
-          Startup
+          Social Justice
         </button>
         <button
-          onClick={() => setMenu("Lifestyle")}
+          onClick={() => setMenu("Education Access")}
           className={
-            menu === "Lifestyle"
+            menu === "Education Access"
               ? "bg-[#012a4a] text-white py-1 px-4 rounded-sm"
               : ""
           }
         >
-          Lifestyle
+          Education Access
         </button>
       </div>
       <div className="flex flex-wrap justify-around gap-2 gap-y-10 mb-16 xl:mx-24">

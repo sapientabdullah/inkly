@@ -54,7 +54,7 @@ export default function Sidebar() {
       <div className="relative flex flex-col h-full max-h-full">
         <Link href="/">
           <p
-            className={`${cormorantGaramond.className} mt-6 text-2xl text-center font-bold hover:underline text-[#012a4a]`}
+            className={`${cormorantGaramond.className} mt-8 text-2xl text-center font-bold hover:underline text-[#012a4a]`}
           >
             Inkly
           </p>
@@ -62,7 +62,7 @@ export default function Sidebar() {
 
         <button
           onClick={() => setOpen((open) => !open)}
-          className={`flex items-center justify-between ${
+          className={`mt-8 flex items-center justify-between ${
             open ? "-translate-y-5" : "-translate-y-2 translate-x-9"
           } w-48 px-4 py-2`}
         >

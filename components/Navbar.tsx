@@ -28,7 +28,7 @@ const Navbar = () => {
           </Link>
         </div>
         <Link
-          href="/admin"
+          href="/admin/addPost"
           className="bg-[#012a4a] text-white px-4 py-2 ml-auto"
         >
           Create

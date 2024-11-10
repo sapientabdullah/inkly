@@ -37,7 +37,6 @@ const Page = ({ params }: PageProps) => {
           params: { id },
         });
         setData(response.data.blog);
-        console.log(response.data.blog);
       } catch (error) {
         console.error("Failed to fetch data", error);
       }

@@ -4,16 +4,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-  interface Blog {
-    _id: string;
-    author: string;
-    title: string;
-    authorImage: string;
-    date: string;
-  }
+interface Blog {
+  _id: string;
+  author: string;
+  title: string;
+  authorImage: string;
+  date: string;
+}
 
 const Page = () => {
-
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const fetchBlogs = async () => {
     const response = await axios.get("/api/blog");
@@ -33,8 +32,7 @@ const Page = () => {
   }, []);
   return (
     <div className="flex-1 pt-5 px-5 sm:pt-12 sm:pl-16">
-      <h1>All Blogs</h1>
-      <div className="relative h-[80vh] max-w-[850px] overflow-x-auto mt-4 border border-gray-400">
+      <div className="relative overflow-x-auto mt-4 border border-gray-400 rounded-md">
         <table className="w-full text-sm text-gray-500">
           <thead className="text-sm text-gray-700 text-left uppercase bg-gray-50">
             <tr>

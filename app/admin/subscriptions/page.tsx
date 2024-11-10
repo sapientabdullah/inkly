@@ -11,7 +11,7 @@ const Page = () => {
     email: string;
     date: string;
   }
-  
+
   const [emails, setEmails] = useState<Email[]>([]);
 
   const fetchEmails = async () => {
@@ -38,10 +38,9 @@ const Page = () => {
   }, []);
   return (
     <div className="flex-1 pt-5 px-5 sm:pt-12 sm:pl-16">
-      <h1>All Subscriptions</h1>
-      <div className="relative max-w-[600px] h-[80vh] overflow-x-auto mt-4 border border-gray-400 scrollbar-hide">
+      <div className="relative overflow-x-auto mt-4 border border-gray-400 scrollbar-hide rounded-md">
         <table className="w-full text-sm text-gray-500 ">
-          <thead className="text-xs text-left text-gray-700 uppercase bg-gray-100">
+          <thead className="text-sm text-left text-gray-700 uppercase bg-gray-100">
             <tr>
               <th className="px-6 py-3" scope="col">
                 Email Subscription

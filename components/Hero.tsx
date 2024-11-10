@@ -61,9 +61,12 @@ const Hero = () => {
               >
                 {blogs[blogs.length - 1].title}
               </h2>
-              <p className="mt-4">
-                {blogs[blogs.length - 1].description.slice(0, 100)}
-              </p>
+              <p
+                className="mt-4"
+                dangerouslySetInnerHTML={{
+                  __html: blogs[blogs.length - 1].description.slice(0, 110),
+                }}
+              ></p>
             </div>
           </Link>
         )}

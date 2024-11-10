@@ -30,7 +30,7 @@ const Post = ({ title, description, category, image, id }: PostProps) => {
         </Link>
         <p
           className="mb-3 text-sm tracking-tight text-[#012a4a] "
-          dangerouslySetInnerHTML={{ __html: description.slice(0, 100) }}
+          dangerouslySetInnerHTML={{ __html: description.slice(0, 110) }}
         ></p>
       </div>
       <p className="mt-4 px-2 py-1 inline-block border border-[#012a4a] text-[#012a4a] text-sm rounded-full">

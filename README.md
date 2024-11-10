@@ -4,12 +4,6 @@ A minimalist platform for publishing stories of resilience and community solutio
 
 ## Features
 
-- **Email Subscriptions**: Allows users to subscribe to receive updates on new stories.
-- **Post Management**: Users can add, view, and delete stories.
-- **Categories**: Stories can be categorized for easy browsing and organization.
-
-## Features
-
 - **Email Subscriptions**: Users can subscribe to receive notifications of new stories.
 - **Post Management**: Users can add, view, and delete stories.
 - **Categories**: Stories can be categorized, making it easier for readers to find topics of interest.

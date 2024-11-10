@@ -5,6 +5,7 @@ import BlogModel from "@/lib/models/BlogModel";
 import fs from "fs";
 
 export const GET = async (request: Request) => {
+  await connect();
   const url = new URL(request.url);
   const blogId = url.searchParams.get("id");
   if (blogId) {

@@ -13,6 +13,38 @@ html {
   margin: 0;
 }
 
+.content {
+  padding: 36px 0;
+
+}
+
+.content b {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.content p {
+  margin-bottom: 10px;
+}
+
+.content h1 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.content h2 {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.content h1 {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
 body {
   background-color: #f9f9f9;
 }
@@ -24,10 +56,4 @@ body {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-@layer base {
-  :root {
-    --background: #FBF8F3;
-  }
 }

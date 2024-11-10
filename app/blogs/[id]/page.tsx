@@ -93,53 +93,10 @@ const Page = ({ params }: PageProps) => {
           height={720}
           alt=""
         />
-        <h1 className="my-8 text-[26px] font-semibold">Introduction:</h1>
-        <p>{data.description}</p>
-        <h3 className="my-5 text-[18px] font-semibold">
-          Step 1: Self-Reflection and goal setting
-        </h3>
-        <p className="my-3 ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At corrupti
-          fuga impedit velit totam soluta deleniti maiores non possimus sit
-          accusamus amet doloremque, ducimus aut, ab dolorem nisi consequatur
-          illum.
-        </p>
-        <p className="my-3 ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At corrupti
-          fuga impedit velit totam soluta deleniti maiores non possimus sit
-          accusamus amet doloremque, ducimus aut, ab dolorem nisi consequatur
-          illum.
-        </p>
-        <h3 className="my-5 text-[18px] font-semibold">
-          Step 2: Self-Reflection and goal setting
-        </h3>
-        <p className="my-3 ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At corrupti
-          fuga impedit velit totam soluta deleniti maiores non possimus sit
-          accusamus amet doloremque, ducimus aut, ab dolorem nisi consequatur
-          illum.
-        </p>
-        <p className="my-3 ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At corrupti
-          fuga impedit velit totam soluta deleniti maiores non possimus sit
-          accusamus amet doloremque, ducimus aut, ab dolorem nisi consequatur
-          illum.
-        </p>
-        <h3 className="my-5 text-[18px] font-semibold">
-          Step 3: Self-Reflection and goal setting
-        </h3>
-        <p className="my-3 ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At corrupti
-          fuga impedit velit totam soluta deleniti maiores non possimus sit
-          accusamus amet doloremque, ducimus aut, ab dolorem nisi consequatur
-          illum.
-        </p>
-        <p className="my-3 ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At corrupti
-          fuga impedit velit totam soluta deleniti maiores non possimus sit
-          accusamus amet doloremque, ducimus aut, ab dolorem nisi consequatur
-          illum.
-        </p>
+        <div
+          className="content"
+          dangerouslySetInnerHTML={{ __html: data.description }}
+        ></div>
       </div>
       <Footer />
     </>

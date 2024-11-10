@@ -14,7 +14,7 @@ const Post = ({ title, description, category, image, id }: PostProps) => {
   return (
     <div id="posts" className="max-w-[330px] sm:max-w-[350px]">
       <Link href={`/blogs/${id}`}>
-        <Image src={image} alt="zebras" width={400} height={400} />
+        <Image src={image} alt="" width={400} height={400} />
       </Link>
 
       <div className="mt-4 ">
@@ -26,9 +26,10 @@ const Post = ({ title, description, category, image, id }: PostProps) => {
             <MdArrowOutward className="mt-1 text-[#012a4a]" />
           </div>
         </Link>
-        <p className="mb-3 text-sm tracking-tight text-[#012a4a] ">
-          {description}
-        </p>
+        <p
+          className="mb-3 text-sm tracking-tight text-[#012a4a] "
+          dangerouslySetInnerHTML={{ __html: description.slice(0, 100) }}
+        ></p>
       </div>
       <p className="mt-4 px-2 py-1 inline-block border border-[#012a4a] text-[#012a4a] text-sm rounded-full">
         {category}

@@ -54,7 +54,36 @@ const Page = () => {
   return (
     <>
       <form onSubmit={onSubmitHandler} className="pt-5 px-5 sm:pt-12 sm:pl-16">
-        <p className="text-xl">Upload thumbnail</p>
+        <input
+          name="title"
+          onChange={onChangeHandler}
+          value={data.title}
+          type="text"
+          className="bg-inherit w-full  mt-4 py-3 px-4 outline-none border-none placeholder:text-4xl text-4xl"
+          required
+          placeholder="Blog title"
+        />
+        <textarea
+          name="description"
+          onChange={onChangeHandler}
+          value={data.description}
+          className="bg-inherit w-full mt-4 py-3 px-4 outline-none border-none placeholder:text-xl text-xl"
+          required
+          placeholder="Description (HTML tags supported)"
+          rows={20}
+        />
+        <p className="text-xl mt-4 text-gray-400 px-4">Category</p>
+        <select
+          onChange={onChangeHandler}
+          value={data.category}
+          name="category"
+          className="w-40 mt-4 px-4 py-3 border text-gray-500"
+        >
+          <option value="Startups">Startups</option>
+          <option value="Technology">Technology</option>
+          <option value="Lifestyle">Lifestyle</option>
+        </select>
+        <p className="text-xl text-gray-400 mt-8 ">Upload thumbnail</p>
         <label
           htmlFor="image"
           className="mt-4 flex items-center h-24 w-44 justify-center border border-black cursor-pointer"
@@ -83,40 +112,9 @@ const Page = () => {
           hidden
           required
         />
-        <p className="text-xl mt-4 ">Title</p>
-        <input
-          name="title"
-          onChange={onChangeHandler}
-          value={data.title}
-          type="text"
-          className="border w-full sm:w-[500px] mt-4 py-3 px-4"
-          required
-          placeholder="Enter blog title"
-        />
-        <p className="text-xl mt-4 ">Description</p>
-        <textarea
-          name="description"
-          onChange={onChangeHandler}
-          value={data.description}
-          className="border w-full sm:w-[500px] mt-4 py-3 px-4"
-          required
-          placeholder="Enter blog description"
-          rows={6}
-        />
-        <p className="text-xl mt-4 ">Category</p>
-        <select
-          onChange={onChangeHandler}
-          value={data.category}
-          name="category"
-          className="w-40 mt-4 px-4 py-3 border text-gray-500"
-        >
-          <option value="Startups">Startups</option>
-          <option value="Technology">Technology</option>
-          <option value="Lifestyle">Lifestyle</option>
-        </select>
         <br />
         <button type="submit" className="mt-8 w-40 h-12 bg-black text-white">
-          Create
+          Publish
         </button>
       </form>
     </>
